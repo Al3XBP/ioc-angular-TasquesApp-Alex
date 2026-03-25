@@ -3,8 +3,6 @@
 
 <h2>Llistat d'elements</h2>
 
-<div *ngFor="let element of elements">
-  <p>
-    {{ element.id }} - {{ element.nom }} - {{ element.valor }} - {{ element.descripcio }}
-  </p>
-</div>
+<app-barra-cerca (cercaCanviada)="actualitzarCerca($event)"></app-barra-cerca>
+
+<app-llista-elements [elements]="elementsFiltrats"></app-llista-elements>
