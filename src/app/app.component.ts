@@ -9,5 +9,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'ioc-angular-TasquesApp-Alex';
+  constuctor() {
+	console.log("TasquesApp inicialitzada correctament.");
+  }
 }
