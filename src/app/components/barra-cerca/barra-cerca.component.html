@@ -1,7 +1,19 @@
-<div class="barra-cerca">
+<form #formulariCerca="ngForm" (ngSubmit)="actualitzarCerca()" class="formulari-cerca">
   <input
     type="text"
+    name="textCerca"
     [(ngModel)]="textCerca"
-    (input)="actualitzarCerca()"
-    placeholder="Cerca un element pel nom" />
-</div>
+    #campCerca="ngModel"
+    required
+    minlength="3"
+    placeholder="Escriu almenys 3 caràcters per cercar"
+  />
+
+  <button type="submit" [disabled]="formulariCerca.invalid">Cerca</button>
+  
+  <div class="error" *ngIf="campCerca.invalid && (campCerca.touched || campCerca.dirty)">
+    <p *ngIf="campCerca.errors?.['required']">El camp de cerca és obligatori.</p>
+    <p *ngIf="campCerca.errors?.['minlength']">Has d'escriure com a mínim 3 caràcters.</p>
+  </div>
+</form>
+  

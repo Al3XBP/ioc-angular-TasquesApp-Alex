@@ -1,10 +1,36 @@
-.barra-cerca {
-  margin: 20px 0;
+.formulari-cerca {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 20px auto;
 }
 
 input {
-  width: 100%;
-  max-width: 400px;
   padding: 10px;
   font-size: 1rem;
+  border: 2pc solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  width: 140px;  
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff6600;
+  color: white;
+  cursor: pointer;
+  align-self: center;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
 }
