@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+
+.main-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #f9fafb;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+h1 { 
+  text-align: center;
+  color: #ff6600;
+}
+
+p {
+  font-weight: 400;
+}
+

@@ -23,6 +23,15 @@ export class AppComponent {
   actualitzarCerca(text: string): void {
     const textMin = text.toLowerCase();
 
+    if (textMin === '') {
+      this.elementsFiltrats = this.elements;
+      return;
+    }
+
+    if (textMin.length < 3) {
+      return;
+}
+
     this.elementsFiltrats = this.elements.filter(element =>
       element.nom.toLowerCase().includes(textMin)
     );

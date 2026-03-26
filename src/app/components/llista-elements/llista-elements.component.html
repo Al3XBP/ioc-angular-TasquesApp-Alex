@@ -1,4 +1,4 @@
-<div *ngIf="elements.length > 0; else senseResultats">
+<div *ngIf="elements.length > 0; else senseResultats" class="grid-elements">
   <app-targeta-element
     *ngFor="let element of elements; trackBy: trackByElementId"
     [element]="element">
@@ -6,5 +6,5 @@
 </div>
 
 <ng-template #senseResultats>
-  <p class="avis">No s'han trobat resultats per a la cerca.</p>
+  <p class="avis" aria-live="polite">No s'han trobat resultats per a la cerca.</p>
 </ng-template> 

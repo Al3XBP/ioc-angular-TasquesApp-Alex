@@ -1,8 +1,10 @@
-<h1>Benvingut a TasquesApp</h1>
-<p>Aplicació de gestió de tasques personals desenvolupada per Alex Bravo Pablos</p>
+<div class="main-container">
+  <h1>Benvingut a TasquesApp</h1>
+  <p>Aplicació de gestió de tasques personals desenvolupada per Alex Bravo Pablos</p>
 
-<h2>Llistat de tasques</h2>
+  <h2>Llistat de tasques</h2>
 
-<app-barra-cerca (cercaCanviada)="actualitzarCerca($event)"></app-barra-cerca>
+  <app-barra-cerca (cercaCanviada)="actualitzarCerca($event)"></app-barra-cerca>
 
-<app-llista-elements [elements]="elementsFiltrats"></app-llista-elements>
+  <app-llista-elements [elements]="elementsFiltrats"></app-llista-elements>
+</div>

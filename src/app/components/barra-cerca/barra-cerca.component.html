@@ -1,5 +1,8 @@
-<form #formulariCerca="ngForm" (ngSubmit)="actualitzarCerca()" class="formulari-cerca">
+<form #formulariCerca="ngForm" (ngSubmit)="actualitzarCerca()" class="formulari-cerca" novalidate>
+  <label for="textCerca" class="etiqueta-cerca">Cerca una tasca</label>
+
   <input
+    id="textCerca"
     type="text"
     name="textCerca"
     [(ngModel)]="textCerca"
@@ -7,11 +10,20 @@
     required
     minlength="3"
     placeholder="Escriu almenys 3 caràcters per cercar"
+    aria-describedby="ajuda-cerca error-cerca"
+    [attr.aria-invalid]="campCerca.invalid && (campCerca.touched || campCerca.dirty)"
   />
 
-  <button type="submit" [disabled]="formulariCerca.invalid">Cerca</button>
+  <p id="ajuda-cerca" class="ajuda-cerca">Introdueix un mínim de 3 caràcters per filtrar la llista.</p>
+
+  <button type="submit" aria-label="Executar la cerca">Cerca</button>
   
-  <div class="error" *ngIf="campCerca.invalid && (campCerca.touched || campCerca.dirty)">
+  <div
+    id="error-cerca";
+    class="error"
+    *ngIf="campCerca.invalid && (campCerca.touched || campCerca.dirty)"
+    aria-live="polite"
+  >
     <p *ngIf="campCerca.errors?.['required']">El camp de cerca és obligatori.</p>
     <p *ngIf="campCerca.errors?.['minlength']">Has d'escriure com a mínim 3 caràcters.</p>
   </div>
