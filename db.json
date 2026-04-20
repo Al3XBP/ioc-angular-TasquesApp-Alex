@@ -1,0 +1,16 @@
+{
+  "elements": [
+    { "id": 1, "nom": "Comprar menjar", "valor": 10, "descripcio": "Fruita, pa i llet", "popular": true },
+    { "id": 2, "nom": "Estudiar", "valor": 20, "popular": true },
+    { "id": 3, "nom": "Fer exercici", "valor": 30, "descripcio": "Caminar 30 minuts", "popular": false },
+    { "id": 4, "nom": "Llegir un llibre", "valor": 40, "popular": true },
+    { "id": 5, "nom": "Preparar el sopar", "valor": 50, "descripcio": "Cuinar alguna cosa senzilla", "popular": false },
+    { "id": 6, "nom": "Trucar als familiars", "valor": 60, "popular": true },
+    { "id": 7, "nom": "Ordenar l’habitació", "valor": 70, "descripcio": "Recollir roba i escriptori", "popular": false },
+    { "id": 8, "nom": "Fer la compra", "valor": 80, "popular": true },
+    { "id": 9, "nom": "Practicar codi", "valor": 90, "popular": false },
+    { "id": 10, "nom": "Descansar", "valor": 100, "descripcio": "Prendre una pausa i desconnectar", "popular": true }
+  ]
+}
+	
+	
