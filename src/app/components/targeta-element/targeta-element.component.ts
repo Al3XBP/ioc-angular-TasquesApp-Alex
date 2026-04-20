@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ElementCataleg } from '../../models/element-cataleg.model';
+import { ElementCataleg } from '../../models/element.model';
 
 @Component({
   selector: 'app-targeta-element',

@@ -1,7 +1,11 @@
 <div class="targeta" role="article" aria-label="Informació de l'element">
-  <h3>{{ element.nom | uppercase }}</h3>
-  <p><strong>ID:</strong> {{ element.id }}</p>
-  <p><strong>Valor:</strong> {{ element.valor | number: '1.0-0' }}</p>
-  <p><strong>Descripció:</strong> {{ element.descripcio || 'Sense descripció' }}</p>
+  <img [src]="element.imatgeUrl" [alt]="element.titol" class="imatge-element" />
+
+  <h3>{{ element.titol | uppercase }}</h3>
+
+  <p><strong>Categoria:</strong> {{ element.categoria }}</p>
+  <p><strong>Preu:</strong> {{ element.preu | number:'1.0-0' }}</p>
+  <p><strong>Unitats:</strong> {{ element.unitats }}</p>
+  <p><strong>Popular:</strong> {{ element.esPopular ? 'Sí' : 'No' }}</p>
+  <p><strong>Descripció:</strong> {{ element.descripcio }}</p>
 </div>
-	

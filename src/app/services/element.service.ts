@@ -1,7 +1,8 @@
 import { Injectable, Signal, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ElementCataleg } from '../models/element-cataleg.model';
 import { environment } from '../../environments/environment';
+import { ElementApiResponse, ElementCataleg } from '../models/element.model';
+import { adaptarElementsApi } from '../adaptadors/element.adaptador';
 
 @Injectable({
   providedIn: 'root'
@@ -23,9 +24,9 @@ export class ElementService {
     this._carregant.set(true);
     this._error.set(null);
 
-    this.http.get<ElementCataleg[]>(`${this.apiUrl}?popular=true`).subscribe({
+    this.http.get<ElementApiResponse[]>(`${this.apiUrl}?popular=true`).subscribe({
       next: (data) => {
-        this._elements.set(data);
+        this._elements.set(adaptarElementsApi(data));
         this._carregant.set(false);
       },
       error: () => {
@@ -39,9 +40,9 @@ export class ElementService {
     this._carregant.set(true);
     this._error.set(null);
 
-    this.http.get<ElementCataleg[]>(`${this.apiUrl}?nom_like=${terme}`).subscribe({
+    this.http.get<ElementApiResponse[]>(`${this.apiUrl}?nom_like=${terme}`).subscribe({
       next: (data) => {
-        this._elements.set(data);
+        this._elements.set(adaptarElementsApi(data));
         this._carregant.set(false);
       },
       error: () => {
