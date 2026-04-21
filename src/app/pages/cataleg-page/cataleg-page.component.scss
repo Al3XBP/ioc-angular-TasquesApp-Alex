@@ -30,3 +30,15 @@ button {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.panell-preferits {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #fafafa;
+}
+
+.panell-preferits h2 {
+  margin-top: 0;
+}

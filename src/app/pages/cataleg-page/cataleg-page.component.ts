@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ElementService } from '../../services/element.service';
 import { TargetaElementComponent } from '../../components/targeta-element/targeta-element.component';
 import { FormulariCercaComponent } from '../../components/formulari-cerca/formulari-cerca.component';
+import { PreferitsService } from '../../services/preferits.service';
 
 @Component({
   selector: 'app-cataleg-page',
@@ -12,7 +13,10 @@ import { FormulariCercaComponent } from '../../components/formulari-cerca/formul
   styleUrl: './cataleg-page.component.scss'
 })
 export class CatalegPageComponent implements OnInit {
-  constructor(public elementService: ElementService) {}
+  constructor(
+    public elementService: ElementService,
+    public preferitsService: PreferitsService
+  ) {}
 
   ngOnInit(): void {
     this.elementService.obtenirPopulars();

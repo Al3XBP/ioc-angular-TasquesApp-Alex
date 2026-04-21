@@ -1,4 +1,12 @@
 <div class="targeta" role="article" aria-label="Informació de l'element">
+  <button
+    type="button"
+    class="btn-preferit"
+    (click)="togglePreferit()"
+    [attr.aria-label]="preferitsService.esPreferit(element.id) ? 'Eliminar de preferits' : 'Afegir a preferits'">
+    {{ preferitsService.esPreferit(element.id) ? '★' : '☆' }}
+  </button>
+
   <img [src]="element.imatgeUrl" [alt]="element.titol" class="imatge-element" />
 
   <h3>{{ element.titol | uppercase }}</h3>
