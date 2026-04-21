@@ -1,19 +1,6 @@
 <h1>Catàleg d'elements</h1>
 
-<section class="panell-preferits">
-  <h2>Preferits</h2>
-  <p><strong>Total:</strong> {{ preferitsService.totalPreferits() }}</p>
-
-  <ul *ngIf="preferitsService.preferits().length > 0; else sensePreferits">
-    <li *ngFor="let preferit of preferitsService.preferits()">
-      {{ preferit.titol }}
-    </li>
-  </ul>
-
-  <ng-template #sensePreferits>
-    <p>No hi ha preferits seleccionats.</p>
-  </ng-template>
-</section>
+<app-preferits-panel></app-preferits-panel>
 
 <app-formulari-cerca
   (cercaCanviada)="gestionarCerca($event)">

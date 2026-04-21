@@ -1,0 +1,41 @@
+<section class="panell-preferits">
+  <h2>Preferits</h2>
+  <p><strong>Total:</strong> {{ preferitsService.totalPreferits() }}</p>
+
+  <div *ngIf="preferits.length > 0; else sensePreferits">
+    <div class="preferit-item" *ngFor="let preferit of preferits; trackBy: trackByPreferitId">
+      <h3>{{ preferit.titol }}</h3>
+
+      <form *ngIf="formularisNotes[preferit.id]" [formGroup]="obtenirFormulari(preferit.id)">
+        <div formArrayName="notes">
+          <div
+            class="nota-linia"
+            *ngFor="let notaControl of obtenirNotesArray(preferit.id).controls; let i = index">
+            <input
+              type="text"
+              [formControlName]="i"
+              placeholder="Escriu una nota"
+              (blur)="guardarNotes(preferit.id)" />
+
+            <button type="button" class="btn-eliminar" (click)="eliminarNota(preferit.id, i)">
+              x
+            </button>
+
+            <div class="error" *ngIf="notaControl.touched && notaControl.invalid">
+  		<p *ngIf="notaControl.errors?.['required']">La nota no pot estar buida.</p>
+  		<p *ngIf="notaControl.errors?.['minlength']">La nota ha de tenir mínim 3 caràcters.</p>
+	    </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-afegir" (click)="afegirNota(preferit.id)">
+          +
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <ng-template #sensePreferits>
+    <p>No hi ha preferits seleccionats.</p>
+  </ng-template>
+</section>

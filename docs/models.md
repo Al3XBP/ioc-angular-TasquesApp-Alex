@@ -26,3 +26,9 @@
 
 | stock | unitats | number |
 
+
+
+\## Model de preferits
+
+\- `PreferitElement` amplia `ElementCataleg` afegint la propietat `notes: string\[]`
+

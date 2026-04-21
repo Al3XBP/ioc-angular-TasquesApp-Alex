@@ -1,0 +1,51 @@
+.panell-preferits {
+  margin: 20px 0;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #f5f7fa;
+  border: 1px solid #e0e0e0;
+}
+
+.preferit-item {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #ddd;
+}
+
+.nota-linia {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.nota-linia input {
+  flex: 1;
+  min-width: 220px;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.btn-afegir,
+.btn-eliminar {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 6px 10px;
+}
+
+.btn-afegir {
+  background-color: #e6f4ea;
+}
+
+.btn-eliminar {
+  background-color: #fde7e9;
+}
+
+.error {
+  width: 100%;
+  color: #b00020;
+  font-size: 0.9rem;
+}

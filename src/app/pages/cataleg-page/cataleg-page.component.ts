@@ -4,11 +4,12 @@ import { ElementService } from '../../services/element.service';
 import { TargetaElementComponent } from '../../components/targeta-element/targeta-element.component';
 import { FormulariCercaComponent } from '../../components/formulari-cerca/formulari-cerca.component';
 import { PreferitsService } from '../../services/preferits.service';
+import { PreferitsPanelComponent } from '../../components/preferits-panel/preferits-panel.component';
 
 @Component({
   selector: 'app-cataleg-page',
   standalone: true,
-  imports: [CommonModule, TargetaElementComponent, FormulariCercaComponent],
+  imports: [CommonModule, TargetaElementComponent, FormulariCercaComponent, PreferitsPanelComponent],
   templateUrl: './cataleg-page.component.html',
   styleUrl: './cataleg-page.component.scss'
 })

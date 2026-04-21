@@ -19,3 +19,7 @@ export interface ElementCataleg {
   esPopular: boolean;
   unitats: number;
 }
+
+export interface PreferitElement extends ElementCataleg {
+  notes: string[];
+}

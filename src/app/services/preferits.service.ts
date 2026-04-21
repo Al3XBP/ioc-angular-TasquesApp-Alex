@@ -1,5 +1,5 @@
 import { Injectable, Signal, computed, signal } from '@angular/core';
-import { ElementCataleg } from '../models/element.model';
+import { ElementCataleg, PreferitElement } from '../models/element.model';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +7,12 @@ import { ElementCataleg } from '../models/element.model';
 export class PreferitsService {
   private readonly STORAGE_KEY = 'preferits-cataleg';
 
-  private _preferits = signal<ElementCataleg[]>(this.carregarPreferits());
+  private _preferits = signal<PreferitElement[]>(this.carregarPreferits());
 
-  readonly preferits: Signal<ElementCataleg[]> = this._preferits.asReadonly();
+  readonly preferits: Signal<PreferitElement[]> = this._preferits.asReadonly();
   readonly totalPreferits = computed(() => this._preferits().length);
 
-  private carregarPreferits(): ElementCataleg[] {
+  private carregarPreferits(): PreferitElement[] {
     try {
       const dades = localStorage.getItem(this.STORAGE_KEY);
       return dades ? JSON.parse(dades) : [];
@@ -37,7 +37,12 @@ export class PreferitsService {
       return;
     }
 
-    this._preferits.set([...actuals, element]);
+    const nouPreferit: PreferitElement = {
+      ...element,
+      notes: []
+    };
+
+    this._preferits.set([...actuals, nouPreferit]);
     this.guardarPreferits();
   }
 
@@ -49,5 +54,14 @@ export class PreferitsService {
 
   esPreferit(id: string): boolean {
     return this._preferits().some(pref => pref.id === id);
+  }
+
+  actualitzarNotes(id: string, notes: string[]): void {
+    const actualitzats = this._preferits().map(pref =>
+      pref.id === id ? { ...pref, notes } : pref
+    );
+
+    this._preferits.set(actualitzats);
+    this.guardarPreferits();
   }
 }
