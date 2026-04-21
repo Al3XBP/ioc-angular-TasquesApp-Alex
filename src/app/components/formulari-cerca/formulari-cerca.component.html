@@ -1,0 +1,35 @@
+<form [formGroup]="formulari" class="formulari-cerca" novalidate>
+  <label for="termeCerca">Cerca d’elements</label>
+
+  <input
+    id="termeCerca"
+    type="text"
+    formControlName="termeCerca"
+    placeholder="Escriu el nom de l’element" />
+
+  <button
+    type="button"
+    class="btn-netejar"
+    *ngIf="termeCercaControl.value"
+    (click)="netejar()">
+    Netejar
+  </button>
+
+  <div class="validant" *ngIf="termeCercaControl.pending">
+    Validant...
+  </div>
+
+  <div class="errors" *ngIf="termeCercaControl.touched && termeCercaControl.invalid">
+    <p *ngIf="termeCercaControl.errors?.['minlength']">
+      Has d’escriure com a mínim 2 caràcters.
+    </p>
+
+    <p *ngIf="termeCercaControl.errors?.['maxlength']">
+      No pots escriure més de 50 caràcters.
+    </p>
+
+    <p *ngIf="termeCercaControl.errors?.['senseResultats']">
+      No hi ha elements que coincideixin amb la cerca.
+    </p>
+  </div>
+</form>

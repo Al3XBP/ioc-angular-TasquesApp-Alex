@@ -1,0 +1,44 @@
+.formulari-cerca {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+label {
+  font-weight: 600;
+}
+
+input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #b00020;
+}
+
+input.ng-valid.ng-touched {
+  border-color: #2e7d32;
+}
+
+.btn-netejar {
+  width: 120px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.validant {
+  color: #555;
+  font-style: italic;
+}
+
+.errors {
+  color: #b00020;
+  font-size: 0.95rem;
+}

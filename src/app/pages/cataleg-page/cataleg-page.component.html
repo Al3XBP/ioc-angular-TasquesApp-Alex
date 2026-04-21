@@ -1,8 +1,12 @@
 <h1>Catàleg d'elements</h1>
 
+<app-formulari-cerca
+  (cercaCanviada)="gestionarCerca($event)">
+</app-formulari-cerca>
+
 <!-- CARREGANT -->
 <div *ngIf="elementService.carregant()">
-  <p class="spinner">Carregant dades...</p>
+  <p class="spinner">⏳ Carregant dades...</p>
 </div>
 
 <!-- ERROR -->
