@@ -1,2 +1,25 @@
-<h1>Login</h1>
-<p>Formulari d'autenticació simulada.</p>
+<h1>Iniciar sessió</h1>
+
+<form (ngSubmit)="iniciarSessio()" class="formulari-login">
+  <label for="email">Correu electrònic</label>
+  <input
+    id="email"
+    type="email"
+    name="email"
+    [(ngModel)]="email"
+    placeholder="Introdueix el correu" />
+
+  <label for="contrasenya">Contrasenya</label>
+  <input
+    id="contrasenya"
+    type="password"
+    name="contrasenya"
+    [(ngModel)]="contrasenya"
+    placeholder="Introdueix la contrasenya" />
+
+  <button type="submit">Entrar</button>
+
+  <p class="error" *ngIf="errorLogin">
+    {{ errorLogin }}
+  </p>
+</form>
