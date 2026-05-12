@@ -1,4 +1,17 @@
 <h1>Catàleg</h1>
-<p>Pàgina principal amb el llistat d'elements.</p>
 
-<a routerLink="/detall/1">Veure detall de l'element 1</a>
+<p>Llistat virtualitzat amb Angular CDK.</p>
+
+<cdk-virtual-scroll-viewport
+  [itemSize]="alturaElement" style="height: 500px;"
+  class="viewport">
+
+  <div *cdkVirtualFor="let element of elements" class="element-virtual">
+
+    <app-targeta-element
+      [element]="element">
+    </app-targeta-element>
+
+  </div>
+
+</cdk-virtual-scroll-viewport>

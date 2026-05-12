@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './detall.component.html',
-  styleUrl: './detall.component.scss'
+  styleUrl: './detall.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DetallComponent {
   id: string | null = null;

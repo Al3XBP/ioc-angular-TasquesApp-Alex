@@ -1,0 +1,14 @@
+<article class="targeta">
+  <h3>{{ element.titol }}</h3>
+
+  <p>{{ element.descripcio }}</p>
+
+  <p>
+    <strong>Categoria:</strong>
+    {{ element.categoria }}
+  </p>
+
+  <a [routerLink]="['/detall', element.id]">
+    Veure detall
+  </a>
+</article>
